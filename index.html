@@ -7,16 +7,103 @@
     <meta name="author" content="Seth Taylor" />
     <meta name="keywords" content="HTML, CSS, Image sharing" />
     <link rel="stylesheet" href="./pages/index.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
     <title>Spots</title>
   </head>
   <body>
     <div class="page">
-      <header class="header"></header>
+      <header class="header">
+        <img src="./images/Logo.svg" alt="Spot Logo" class="header__logo" />
+      </header>
       <main class="content">
-        TEXT
-        <section class="profile"></section>
-        <section class="cards"></section>
+        <section class="profile page__section">
+          <img
+            src="./images/avatar.jpg"
+            alt="Curent user's avatar"
+            class="profile__avatar"
+          />
+          <div class="profile__column">
+            <h1 class="profile__name">Bessie Coleman</h1>
+            <p class="profile__discription">Civil Aviator</p>
+            <button type="button" class="profile__edit-btn">
+              <img src="./images/Edit-Profile.svg" alt="edit pencil" />Edit
+              Profile
+            </button>
+          </div>
+          <button type="button" class="profile__add-btn">
+            <img src="./images/Plus-sign.svg" alt="plus icon" />New Post
+          </button>
+        </section>
+        <section class="cards page__section">
+          <ul class="cards__list">
+            <li class="card">
+              <img
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Val Thorens"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__tittle"></h2>
+                <button type="button" class="card__like-btn"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Val Thorens"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__tittle"></h2>
+                <button type="button" class="card__like-btn"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Val Thorens"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__tittle"></h2>
+                <button type="button" class="card__like-btn"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Val Thorens"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__tittle"></h2>
+                <button type="button" class="card__like-btn"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Val Thorens"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__tittle"></h2>
+                <button type="button" class="card__like-btn"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
+                alt="Val Thorens"
+                class="card__image"
+              />
+              <div class="card__content">
+                <h2 class="card__tittle"></h2>
+                <button type="button" class="card__like-btn"></button>
+              </div>
+            </li>
+          </ul>
+        </section>
       </main>
       <footer class="footer"></footer>
     </div>
