@@ -13,5 +13,5 @@
   /* Replace with the appropriate font weight */
   font-weight: 500;
   /* Replace with the correct file path */
-  src: url("./fonts/Poppins-Regular.ttf") format("truetype");
+  src: url("./fonts/Poppins-Medium.ttf") format("truetype");
 }

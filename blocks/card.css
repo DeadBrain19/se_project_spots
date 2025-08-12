@@ -3,6 +3,7 @@
   width: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 8px;
 }
 
 .card__content {
@@ -17,7 +18,22 @@
   height: 20px;
   border: none;
   background-color: transparent;
-  opacity: 40%;
+  opacity: 0.4;
+}
+
+.card__like-btn:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__tittle {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: "poppins";
+  font-weight: 500;
+  size: 20px;
+  max-width: 353px;
 }
 
 @media screen and (max-width: 627px) {
