@@ -9,6 +9,7 @@
   width: 190px;
   margin-right: 20px;
   border-radius: 8px;
+  object-fit: cover;
 }
 
 .profile__column {
@@ -27,6 +28,7 @@
   gap: 8px;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 
 .profile__add-btn:hover {
@@ -37,6 +39,8 @@
 .profile__name {
   margin: 0 0 12px;
   font-weight: 500;
+  font-size: 32px;
+  line-height: 1;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -53,9 +57,14 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  opacity: 0.7;
 }
 
 .profile__edit-btn {
+  padding: 0;
   margin-top: auto;
   background: none;
   border: none;
@@ -63,6 +72,8 @@
   display: flex;
   gap: 8px;
   opacity: 0.7;
+  color: #212121;
+  font-weight: 500;
 }
 
 .profile__edit-btn:hover {
