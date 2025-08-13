@@ -50,7 +50,7 @@
 }
 
 .profile__discription {
-  margin: 0;
+  margin: 6px 0 0;
   display: -webkit-box;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -65,7 +65,7 @@
 
 .profile__edit-btn {
   padding: 0;
-  margin-top: auto;
+  margin: auto;
   background: none;
   border: none;
   text-align: left;
@@ -117,7 +117,7 @@
   }
 
   .profile__edit-btn {
-    margin: 32px 0 20px;
+    margin: 32px 0 0;
     justify-content: center;
   }
 }
