@@ -32,7 +32,6 @@
   position: absolute;
   top: 32px;
   right: 50px;
-  /* add close icon */
   background-image: url(../images/modalclose.png);
   opacity: 0.4;
   border: none;
