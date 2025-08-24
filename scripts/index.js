@@ -1,12 +1,28 @@
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
+const editProfileForm = editProfileModal.querySelector(".modal__form");
+const editProfileNameInput = editProfileModal.querySelector(
+  "#profile-name-input"
+);
+const editProfileDescriptionInput = editProfileModal.querySelector(
+  "#profile-description-input"
+);
+
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
+const newPostForm = newPostModal.querySelector(".modal__form");
+const newPostUrl = newPostForm.querySelector("#card-image-input");
+const newPostCaption = newPostForm.querySelector("#card-caption-input");
+
+const profileNameEl = document.querySelector(".profile__name");
+const profileDiscriptionEl = document.querySelector(".profile__description");
 
 editProfileBtn.addEventListener("click", function () {
   editProfileModal.classList.add("modal_is-opened");
+  editProfileNameInput.value = profileNameEl.textContent;
+  editProfileDescriptionInput.value = profileDiscriptionEl.textContent;
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
@@ -20,3 +36,19 @@ newPostBtn.addEventListener("click", function () {
 newPostCloseBtn.addEventListener("click", function () {
   newPostModal.classList.remove("modal_is-opened");
 });
+
+function handleEditProfileSubmit(evt) {
+  profileNameEl.textContent = editProfileNameInput.value;
+  profileDiscriptionEl.textContent = editProfileDescriptionInput.value;
+  editProfileModal.classList.remove("modal_is-opened");
+  evt.preventDefault(evt);
+}
+editProfileForm.addEventListener("submit", handleEditProfileSubmit);
+function handleNewPostSubmit(evt) {
+  console.log(newPostUrl.value);
+  console.log(newPostCaption.value);
+  evt.preventDefault(evt);
+  newPostModal.classList.remove("modal_is-opened");
+  newPostForm.reset();
+}
+newPostForm.addEventListener("submit", handleNewPostSubmit);
