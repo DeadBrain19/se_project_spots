@@ -1,7 +1,7 @@
 .modal {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
+  transition: visibility 0.5s linear 0.5s, opacity 0.5s linear;
   background-color: #00000080;
   position: fixed;
   top: 0;
@@ -46,6 +46,7 @@
 
 .modal__close-btn:hover {
   opacity: 1;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -85,6 +86,11 @@
   color: #fcf5e5;
   border-radius: 8px;
   font-size: 16px;
+}
+
+.modal__submit-btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 627px) {

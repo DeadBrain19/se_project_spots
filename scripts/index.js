@@ -17,7 +17,7 @@ const newPostUrl = newPostForm.querySelector("#card-image-input");
 const newPostCaption = newPostForm.querySelector("#card-caption-input");
 
 const profileNameEl = document.querySelector(".profile__name");
-const profileDiscriptionEl = document.querySelector(".profile__description");
+const profileDescriptionEl = document.querySelector(".profile__description");
 
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
