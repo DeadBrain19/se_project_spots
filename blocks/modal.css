@@ -63,6 +63,7 @@
 }
 .modal__close-btn_type_preview:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .modal__title {
@@ -127,12 +128,14 @@
   background-color: rgb(33, 33, 33);
   color: rgb(255, 255, 255);
   font-family: "poppins", Arial, sans-serif;
-  font-weight: medium;
+  font-weight: 500;
   font-size: 20px;
   display: inline-block;
   line-height: 120%;
-  margin: 12px 0 0;
   padding: 4px 8px;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 10px);
 }
 
 @media screen and (max-width: 480px) {

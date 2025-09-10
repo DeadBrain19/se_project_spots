@@ -8,6 +8,7 @@
   object-fit: cover;
   display: block;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .card__content {
@@ -47,6 +48,7 @@
   border: none;
   top: 10px;
   right: 10px;
+  cursor: pointer;
   background-color: transparent;
 }
 
@@ -71,7 +73,7 @@
   }
 
   .card__title {
-    max-width: 250px;
+    max-width: 235px;
     font-size: 16px;
   }
 }

@@ -123,13 +123,13 @@ function handleEditProfileSubmit(evt) {
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   closeModal(editProfileModal);
-  evt.preventDefault(evt);
+  evt.preventDefault();
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
 
 function handleNewPostSubmit(evt) {
-  evt.preventDefault(evt);
+  evt.preventDefault();
 
   const inputValues = getCardElement({
     name: newPostCaption.value,
