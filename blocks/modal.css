@@ -89,6 +89,7 @@
   border: 1px solid rgba(33, 33, 33, 0.4);
   border-radius: 8px;
   font-size: 20px;
+  box-sizing: border-box;
 }
 
 .modal__input::placeholder {
@@ -124,6 +125,7 @@
 }
 
 .modal__caption {
+  margin: 0;
   border-radius: 8px;
   background-color: rgb(33, 33, 33);
   color: rgb(255, 255, 255);
@@ -144,7 +146,6 @@
   }
 
   .modal__input {
-    max-width: 90%;
     font-size: 16px;
   }
 
@@ -153,8 +154,8 @@
   }
 
   .modal__close-btn {
-    top: 6%;
-    right: 6%;
+    top: 12px;
+    right: 12px;
   }
 
   .modal__title {
@@ -163,6 +164,14 @@
 
   .modal__label {
     margin: 0 0 24px;
+  }
+
+  .modal__caption {
+    font-size: 16px;
+  }
+
+  .modal__container {
+    padding: 22px 12px 12px;
   }
 }
 
