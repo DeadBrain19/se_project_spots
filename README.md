@@ -25,3 +25,5 @@ This is the start to a photo sharing platform called Spots where you can like im
 here is the video of me exsplaining my [project](https://drive.google.com/file/d/1wmLWg7on5TZ632Jem-6hF3PYtoQUSgO_/view?usp=sharing)
 
 the Futures that have been added is being able to edit the profile, and the console loging the inputs for a new post!
+
+some of the newest feturess are I made the like button have and active event listener and change to a different look when clicked and have made a modal to be able to preveiw the image with a caption showing in the bottem corner still and a button to be able to leave that modal.
