@@ -77,6 +77,7 @@
 }
 
 .modal__label {
+  display: block;
   margin: 0 0 32px;
   font-size: 16px;
 }
@@ -92,8 +93,23 @@
   box-sizing: border-box;
 }
 
-.modal__input::placeholder {
+.modal__input_type-error {
+  border: 1px solid rgba(225, 0, 0, 0.6);
+}
+
+.modal__input :hover {
+  cursor: pointer;
+}
+
+.modal__input_style .modal__input::placeholder {
   color: #2121214d;
+}
+
+.modal__error {
+  display: block;
+  /*to do font and color*/
+  color: red;
+  margin-top: 8px;
 }
 
 .modal__submit-btn {
@@ -109,6 +125,10 @@
 .modal__submit-btn:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+.modal__submit-btn-disabled {
+  opacity: 50%;
 }
 
 .modal__image-container {

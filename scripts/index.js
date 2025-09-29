@@ -24,11 +24,12 @@ const initialCards = [
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
   },
 ];
-
+//profile elements
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
 const editProfileForm = editProfileModal.querySelector(".modal__form");
+const editProfileSaveBtn = editProfileModal.querySelector(".modal__submit-btn");
 const editProfileNameInput = editProfileModal.querySelector(
   "#profile-name-input"
 );
@@ -38,6 +39,7 @@ const editProfileDescriptionInput = editProfileModal.querySelector(
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
+const NewPostSubmitBtn = newPostModal.querySelector(".modal__submit-btn");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 const newPostForm = newPostModal.querySelector(".modal__form");
 const newPostUrl = newPostForm.querySelector("#card-image-input");
@@ -63,6 +65,21 @@ initialCards.forEach((cardData) => {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  const openedModal = document.querySelectorAll(".modal_is-opened");
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      for (let i = 0; i < openedModal.length; ++i) {
+        closeModal(openedModal[i]);
+      }
+    }
+  });
+  document.addEventListener("click", function (event) {
+    if (event.target === modal) {
+      for (let i = 0; i < openedModal.length; ++i) {
+        closeModal(openedModal[i]);
+      }
+    }
+  });
 }
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
@@ -71,6 +88,11 @@ function closeModal(modal) {
 editProfileBtn.addEventListener("click", function () {
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEl.textContent;
+  resetValidation(
+    editProfileForm,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  );
   openModal(editProfileModal);
 });
 
@@ -123,6 +145,7 @@ function handleEditProfileSubmit(evt) {
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   closeModal(editProfileModal);
+  disableButton(editProfileSaveBtn, settings);
   evt.preventDefault();
 }
 
@@ -138,7 +161,7 @@ function handleNewPostSubmit(evt) {
 
   const cardElement = inputValues;
   cardListEl.prepend(cardElement);
-
+  disableButton(NewPostSubmitBtn, settings);
   closeModal(newPostModal);
   newPostForm.reset();
 }
