@@ -65,38 +65,34 @@ initialCards.forEach((cardData) => {
 
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
-  const openedModal = document.querySelectorAll(".modal_is-opened");
-  document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      for (let i = 0; i < openedModal.length; ++i) {
-        closeModal(openedModal[i]);
-      }
-    }
-  });
-  document.addEventListener("click", function (event) {
-    if (event.target === modal) {
-      for (let i = 0; i < openedModal.length; ++i) {
-        closeModal(openedModal[i]);
-      }
-    }
-  });
+  document.addEventListener("keydown", escClose);
+  setTimeout(() => {
+    document.addEventListener("click", clickClose);
+  }, 0);
 }
+
+function escClose(event) {
+  const openedModal = document.querySelectorAll(".modal_is-opened");
+  if (event.key === "Escape") {
+    for (let i = 0; i < openedModal.length; ++i) {
+      closeModal(openedModal[i]);
+    }
+  }
+}
+
+function clickClose(event) {
+  const openedModal = document.querySelectorAll(".modal_is-opened");
+  for (let i = 0; i < openedModal.length; ++i) {
+    if (event.target === openedModal[i]) {
+      closeModal(openedModal[i]);
+    }
+  }
+}
+
 function closeModal(modal) {
+  document.removeEventListener("click", clickClose);
+  document.removeEventListener("keydown", escClose);
   modal.classList.remove("modal_is-opened");
-  document.removeEventListener("keydown", function (event) {
-    if (event.key === "Escape") {
-      for (let i = 0; i < openedModal.length; ++i) {
-        closeModal(openedModal[i]);
-      }
-    }
-  });
-  document.removeEventListener("click", function (event) {
-    if (event.target === modal) {
-      for (let i = 0; i < openedModal.length; ++i) {
-        closeModal(openedModal[i]);
-      }
-    }
-  });
 }
 
 editProfileBtn.addEventListener("click", function () {
