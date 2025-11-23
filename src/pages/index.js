@@ -1,3 +1,10 @@
+import "./index.css";
+import logo from "../images/Logo.svg";
+import avatar from "../images/avatar.jpg";
+import editProfile from "../images/Edit-Profile.svg";
+import plusSign from "../images/Plus-sign.svg";
+import { enableValidation, validationConfig } from "../scripts/validation";
+
 const initialCards = [
   {
     name: "Val Thorens",
@@ -101,7 +108,7 @@ editProfileBtn.addEventListener("click", function () {
   resetValidation(
     editProfileForm,
     [editProfileNameInput, editProfileDescriptionInput],
-    settings
+    validationConfig
   );
   openModal(editProfileModal);
 });
@@ -155,7 +162,7 @@ function handleEditProfileSubmit(evt) {
   profileNameEl.textContent = editProfileNameInput.value;
   profileDescriptionEl.textContent = editProfileDescriptionInput.value;
   closeModal(editProfileModal);
-  disableButton(editProfileSaveBtn, settings);
+  disableButton(editProfileSaveBtn, validationConfig);
   evt.preventDefault();
 }
 
@@ -171,9 +178,11 @@ function handleNewPostSubmit(evt) {
 
   const cardElement = inputValues;
   cardListEl.prepend(cardElement);
-  disableButton(newPostSubmitBtn, settings);
+  disableButton(newPostSubmitBtn, validationConfig);
   closeModal(newPostModal);
   newPostForm.reset();
 }
 
 newPostForm.addEventListener("submit", handleNewPostSubmit);
+
+enableValidation(validationConfig);
