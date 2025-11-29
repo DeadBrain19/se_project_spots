@@ -6,33 +6,6 @@ import plusSign from "../images/Plus-sign.svg";
 import { enableValidation, validationConfig } from "../scripts/validation";
 import Api from "../utils/Api";
 
-// const initialCards = [
-//   {
-//     name: "Val Thorens",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
-//   },
-//   {
-//     name: "Restaurant terrace",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
-//   },
-//   {
-//     name: "An outdoor cafe",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
-//   },
-//   {
-//     name: "A very long bridge, over the forest and through the trees",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
-//   },
-//   {
-//     name: "Tunnel with morning light",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-//   },
-//   {
-//     name: "Mountain house",
-//     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
-//   },
-// ];
-
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
@@ -41,15 +14,16 @@ const api = new Api({
   },
 });
 
+// Destructure the second item in the callback of the .then()
 api.getAppInfo().then(([cards]) => {
-  cards
-    .forEach((cardData) => {
-      const cardElement = getCardElement(cardData);
-      cardListEl.append(cardElement);
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  cards.forEach((cardData) => {
+    const cardElement = getCardElement(cardData);
+    cardListEl.append(cardElement);
+  });
+
+  //Handle the user's information
+  //set src of image
+  // set text content of both elements
 });
 //profile elements
 const editProfileBtn = document.querySelector(".profile__edit-btn");
@@ -174,11 +148,20 @@ function getCardElement(data) {
 }
 
 function handleEditProfileSubmit(evt) {
-  profileNameEl.textContent = editProfileNameInput.value;
-  profileDescriptionEl.textContent = editProfileDescriptionInput.value;
-  closeModal(editProfileModal);
-  disableButton(editProfileSaveBtn, validationConfig);
+  // TODO use data argument instead of the input values
   evt.preventDefault();
+  api
+    .editUserInfo({
+      name: editProfileNameInput.value,
+      about: editProfileDescriptionInput.value,
+    })
+    .then((data) => {
+      profileNameEl.textContent = editProfileNameInput.value;
+      profileDescriptionEl.textContent = editProfileDescriptionInput.value;
+      disableButton(editProfileSaveBtn, validationConfig);
+      closeModal(editProfileModal);
+    })
+    .catch(console.error);
 }
 
 editProfileForm.addEventListener("submit", handleEditProfileSubmit);
