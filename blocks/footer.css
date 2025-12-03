@@ -1,9 +1,14 @@
 .footer {
+  opacity: 70%;
   display: flex;
   justify-content: center;
+  padding: 60px 0;
 }
 
 .footer__text {
-  margin: 60px auto;
-  color: rgba(33, 33, 33, 0.7);
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: #212121;
 }
