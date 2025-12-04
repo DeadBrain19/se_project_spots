@@ -188,8 +188,8 @@ profilePicForm.addEventListener("submit", submitProfilePicForm);
 //Post form functions
 newPostBtn.addEventListener("click", () => {
   //clear exsisting data
-  modalCardText.textContent = "";
-  modalCardImage.src = "";
+  resetValidation(cardForm, [imageLink, imageCaption], validationConfig);
+  cardForm.reset();
 
   //open the modal
   openModal(newPostModal);
