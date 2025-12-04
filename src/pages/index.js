@@ -187,6 +187,11 @@ profilePicForm.addEventListener("submit", submitProfilePicForm);
 
 //Post form functions
 newPostBtn.addEventListener("click", () => {
+  //clear exsisting data
+  modalCardText.textContent = "";
+  modalCardImage.src = "";
+
+  //open the modal
   openModal(newPostModal);
 });
 
