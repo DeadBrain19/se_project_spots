@@ -328,4 +328,26 @@
     max-width: 100px;
     height: 52px;
   }
+
+  .modal__card-text {
+    font-size: 16px;
+  }
+  .modal__container_delete-modal {
+    max-width: 70vw;
+  }
+  .modal__close-button_delete-modal {
+    height: 32px;
+    width: 32px;
+    right: -50px;
+    top: -10px;
+  }
+  .modal__delete-btn {
+    max-width: 100px;
+    height: 52px;
+  }
+
+  .modal__cancel-btn {
+    max-width: 100px;
+    height: 52px;
+  }
 }
