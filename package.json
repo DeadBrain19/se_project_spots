@@ -30,12 +30,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeadBrain19/se_project_spot.git"
+    "url": "git+https://github.com/DevSethT/se_project_spot.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DeadBrain19/se_project_spot/issues"
+    "url": "https://github.com/DevSethT/se_project_spot/issues"
   },
-  "homepage": "https://github.com/DeadBrain19/se_project_spot#readme"
+  "homepage": "https://github.com/DevSethT/se_project_spot#readme"
 }
